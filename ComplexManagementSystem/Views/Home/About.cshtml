@@ -1,0 +1,71 @@
+﻿@model ComplexManagementSystem.Models.Agency
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="hero">
+    <div class="outter">
+        <div class="inner">
+            <div class="hero-content">
+                <div class="container">
+                    <span class="little"></span>
+                    <h1 class="subhero-title">
+                        Here's a little about us<br>
+                        <span>Take a look</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model != null)
+{
+        <section class="news-list atop">
+            <div class="container">
+                <div class="row">
+                    <!-- Post -->
+                    <article class="col-lg-12">
+                        <div class="post-image">
+                            <img src="~/images/@Model.HomePhoto" alt="">
+                        </div>
+                        <div class="article-content">
+                            <div class="col-lg-8 offset-lg-2 article-bottom text-center">
+                                <h2 class="article-title">@Model.Name</h2>
+                                <p>@Model.About</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h2 class="article-title">Get in touch with us</h2>
+                        <p>Line 1: @Model.Phone1</p>
+                        <p>Line 2: @Model.Phone2</p>
+                        <p>Email : @Model.Email</p>
+                        <br />
+                        <img src="~/images/@Model.AboutPhoto">
+                    </article>
+                </div> <!-- row end -->
+            </div>  <!-- container end-->
+        </section>
+}
+else
+{
+
+    <section class="news-list atop">
+        <div class="container">
+            <div class="row">
+                <article class="col-lg-12">
+                    <br />
+                    <br />
+                    <div class="container">
+                        <div class="alert alert-dark" role="alert">
+                            Go To The Admin Dashboard area and add one Property Listing.
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                </article>
+            </div>
+        </div>
+    </section>
+}

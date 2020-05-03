@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-ComplexManagementSystem-EEBC5C0E-10FF-4ADD-9057-2237B1A9820F</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Remove="CMS.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
+    <PackageReference Include="bootstrap" Version="4.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="Data\Migrations\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Areas\Identity\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\6eed1583-061a-4e5b-9818-c3191790d8ee_348f530c-97d9-4245-aa44-113002d19ded.jpg" />
+    <Content Remove="wwwroot\images\456203ef-fdcc-43e0-8ff9-ff1955cc6ff5_Simplex.jpg" />
+    <Content Remove="Areas\Identity\Pages\Account\Register.cshtml" />
+    <Content Remove="Areas\Identity\Pages\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20200423225806_initialCommit.cs" />
+    <Compile Remove="Migrations\20200424142319_initialCommit2.Designer.cs" />
+    <Compile Remove="Migrations\20200424142319_initialCommit2.cs" />
+    <Compile Remove="Migrations\20200425084501_PostPhotos.cs" />
+    <Compile Remove="Migrations\20200425084501_PostPhotos.Designer.cs" />
+  </ItemGroup>
+</Project>

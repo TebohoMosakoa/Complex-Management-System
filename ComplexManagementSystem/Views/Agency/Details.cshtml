@@ -1,0 +1,61 @@
+@model ComplexManagementSystem.ViewModels.AgencyDetailViewModels
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Agency</h4>
+    <hr />
+    <div class="col-sm-10">
+        Home Page Photo
+        <br />
+        <img src="~/images/@Model.Agency.HomePhoto." style="width:400px;height:auto"/>
+    </div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agency.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agency.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agency.Phone1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agency.Phone1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agency.Phone2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agency.Phone2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agency.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agency.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agency.About)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agency.About)
+        </dd>
+
+    </dl>
+    <div class="col-sm-10">
+        About Page Photo
+        <br />
+        <img class="img-fluid" src="~/images/@Model.Agency.AboutPhoto." style="width:400px;height:auto"/> 
+    </div>
+</div>
+<hr />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Agency.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

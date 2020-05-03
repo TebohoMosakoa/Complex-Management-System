@@ -1,0 +1,52 @@
+@model ComplexManagementSystem.ViewModels.PostEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Post</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CurrentPhotoPath" />
+            <div class="form-group">
+                <label class="control-label">Current Image</label>
+                <img src="~/images/@Model.CurrentPhotoPath" style="width:400px; height:auto" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Topic" class="control-label"></label>
+                <input asp-for="Topic" class="form-control" />
+                <span asp-validation-for="Topic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Mini Descriptive paragraph</label>
+                <input asp-for="MiniParagragh" class="form-control" />
+                <span asp-validation-for="MiniParagragh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Blog" class="control-label"></label>
+                <textarea asp-for="Blog" class="form-control"></textarea>
+                <span asp-validation-for="Blog" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/scripts.js" asp-append-version="true"></script>

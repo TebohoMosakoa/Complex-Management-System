@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ComplexManagementSystem.Models.House>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="hero">
+    <div class="outter">
+        <div class="inner">
+            <div class="hero-content">
+                <div class="container">
+                    <span class="little">Latest Properties</span>
+                    <h1 class="subhero-title">
+                        Don't just look for a house, Look for a home!<br>
+                        <span>Take a look</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model != null && Model.Count() > 0)
+{
+    @foreach (var house in Model)
+    {
+        <section class="news-list atop">
+            <div class="container">
+                <div class="row">
+                    <!-- Post -->
+                    <article class="col-lg-12">
+                        <div class="post-image">
+                            <img src="~/images/@house.PhotoPath1" alt="">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-top">
+                                <ul class="entry-data">
+                                    <li><a href="">Listing Id: </a></li>
+                                    <li><a href="">@house.ListingId</a></li>
+                                </ul>
+                                <br />
+                                <ul class="entry-data">
+                                    <li><a href="">Price: </a></li>
+                                    <li><a href="">@house.Price</a></li>
+                                </ul>
+
+                                <div class="entry-date">
+                                    <a href="#"><i class="fas fa-ruler-combined"></i> @house.Size Square Meters</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 offset-lg-2 article-bottom text-center">
+                                <a href="news-detail.html" data-type="ajax-load"><h2 class="article-title">Type: @house.Type</h2></a>
+                                <p>@house.MiniDescription</p>
+                                <a class="site-btn top_30" asp-action="PropertyDetails" asp-route-id="@house.Id">View Property</a>
+                            </div>
+                        </div>
+                    </article>
+                </div> <!-- row end -->
+            </div>  <!-- container end-->
+        </section>
+    }
+}
+else
+{
+
+    <section class="news-list atop">
+        <div class="container">
+            <div class="row">
+                <article class="col-lg-12">
+                    <br />
+                    <br />
+                    <div class="container">
+                        <div class="alert alert-dark" role="alert">
+                            Go To The Admin Dashboard area and add one Property Listing.
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                </article>
+            </div>
+        </div>
+    </section>
+}

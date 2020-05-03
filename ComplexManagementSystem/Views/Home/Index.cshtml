@@ -1,0 +1,133 @@
+﻿@model ComplexManagementSystem.ViewModels.HomeListingViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model.Houses.Count() > 0 && Model.BlogPosts.Count() > 0 && Model.Agencies.Count() > 0)
+{
+    <div class="hero work-content">
+        <div class="outter">
+            <div class="inner">
+                <div class="container text-center">
+                    <h2 class="article-title">@Model.Agencies.First().Name</h2>
+                    <ul class="entry-data">
+                        <li style="color:white">It's not just a House. It's memories.<br /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image" style="background-image:url(assets/images/familygray.jpg)"></div>
+        <div class="video-wrapper">
+            <video loop="" muted="" autoplay="">
+                <source src="~/images/video.mp4" type="video/mp4">
+                <source src="~/images/video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+    <article>
+        <a href="~/Home/Properties" data-type="ajax-load" class="col-lg-12 next-content text-center padbot_90">
+            <div class="link-subtitle">View</div>
+            <div class="link-title">Latest Property Listing</div>
+        </a>
+        <div class="container">
+            <p style="font-weight:bold;font-size:larger">Listing Id:  @Model.Houses.First().ListingId</p>
+            <p style="font-weight:bold;font-size:larger">Type:  @Model.Houses.First().Type</p>
+            <p style="font-weight:bold;font-size:larger">Street Address:  @Model.Houses.First().StreetAddress</p>
+            <br />
+            <p>
+                <i class="fas fa-bed fa-2x"></i> &nbsp; @Model.Houses.First().NumberOfRooms &nbsp;&nbsp;
+                <i class="fas fa-bath fa-2x"></i> &nbsp; @Model.Houses.First().NumberOfBathrooms
+            </p>
+            <p>@Model.Houses.First().MiniDescription</p>
+        </div>
+        <!-- Photo Gallery -->
+        <div class="container padding_60">
+            <div class="lightbox-gallery row box-animation">
+                <!-- a image -->
+                <div class="col-lg-12">
+                    <a href="~/images/@Model.Houses.First().PhotoPath1" class="image lightbox" style="border-radius:10px">
+                        <img src="~/images/@Model.Houses.First().PhotoPath1" alt="" style="border-radius:10px">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Project Info -->
+        <a href="~/Home/News" data-type="ajax-load" class="col-lg-12 next-content text-center padbot_90">
+            <div class="link-subtitle">View</div>
+            <div class="link-title">Latest News</div>
+        </a>
+        <div class="container">
+            <div class="row project-info">
+                <div class="col-lg-8">
+                    <h2 class="title">Latest Blog</h2>
+                    <p>@Model.BlogPosts.First().MiniParagragh</p>
+                </div>
+                <div class="col-lg-4 categories">
+                    <ul>
+                        <li class="client">@Model.BlogPosts.First().Topic</li>
+                        <li>@Model.BlogPosts.First().DateCreated</li>
+                        <li><a target="_blank" href="#">Read More</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Photo Gallery -->
+        <div class="container padding_60">
+            <div class="lightbox-gallery row box-animation">
+                <!-- a image -->
+                <div class="col-lg-6">
+                    <a href="~/images/@Model.BlogPosts.First().PhotoPath1" class="image lightbox">
+                        <img src="~/images/@Model.BlogPosts.First().PhotoPath1" alt="" style="border-radius:10px; height:400px">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a href="~/images/@Model.BlogPosts.First().PhotoPath2" class="image lightbox">
+                        <img src="~/images/@Model.BlogPosts.First().PhotoPath2" alt="" style="border-radius:10px; height:400px">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Sub Text-->
+    </article>
+    <!-- Next Content-->
+    <a href="~/Home/Properties" data-type="ajax-load" class="col-lg-12 next-content text-center padbot_90">
+        <div class="link-subtitle">Next Content</div>
+        <div class="link-title">Properties.</div>
+    </a>
+}
+else
+{
+<div class="hero work-content">
+    <div class="outter">
+        <div class="inner">
+            <div class="container text-center">
+                <h2 class="article-title">Your Agency Name</h2>
+                <ul class="entry-data">
+                    <li style="color:white">It's not just a House. It's memories.<br /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-image" style="background-image:url(assets/images/familygray.jpg)"></div>
+    <div class="video-wrapper">
+        <video loop="" muted="" autoplay="">
+            <source src="~/images/video.mp4" type="video/mp4">
+            <source src="~/images/video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
+<article>
+    <br />
+    <br />
+    <div class="container">
+        <div class="alert alert-dark" role="alert">
+            Go To The Admin Dashboard area and add Agency Information, one Property Listing and one Blog Post.
+        </div>
+    </div>
+    <br />
+    <br />
+
+</article>
+}
+

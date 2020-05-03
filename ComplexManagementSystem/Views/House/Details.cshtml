@@ -1,0 +1,158 @@
+@model ComplexManagementSystem.ViewModels.HouseDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>House</h4>
+    <hr />
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item carousel-multi-item-2" data-ride="carousel">
+
+        <!--Controls-->
+        <div class="controls-top">
+            <a class="black-text" href="#multi-item-example" data-slide="prev"><i class="fas fa-angle-left fa-3x pr-3"></i></a>
+            <a class="black-text" href="#multi-item-example" data-slide="next"><i class="fas fa-angle-right fa-3x pl-3"></i></a>
+        </div>
+        <!--/.Controls-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <img class="img-fluid" src="~/images/@Model.House.PhotoPath1"
+                             alt="Card image cap">
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <img class="img-fluid" src="~/images/@Model.House.PhotoPath2"
+                             alt="Card image cap">
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <img class="img-fluid" src="~/images/@Model.House.PhotoPath3"
+                             alt="Card image cap">
+                    </div>
+                </div>
+
+            </div>
+            <!--/.First slide-->
+            <!--Second slide-->
+            @if (Model.House.PhotoPath4 != null)
+            {
+                <div class="carousel-item">
+
+                    <div class="col-md-3 mb-3">
+                        <div class="card">
+                            <img class="img-fluid" src="~/images/@Model.House.PhotoPath4"
+                                 alt="Card image cap">
+                        </div>
+                    </div>
+                    @if (Model.House.PhotoPath5 != null)
+                    {
+                        <div class="col-md-3 mb-3">
+                            <div class="card">
+                                <img class="img-fluid" src="~/images/@Model.House.PhotoPath5"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+                    }
+                    @if (Model.House.PhotoPath6 != null)
+                    {
+                        <div class="col-md-3 mb-3">
+                            <div class="card">
+                                <img class="img-fluid" src="~/images/@Model.House.PhotoPath6"
+                                     alt="Card image cap">
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            <!--/.Second slide-->
+        </div>
+        <!--/.Slides-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.ListingId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.ListingId)
+        </dd>
+        <dt class="col-sm-2">
+            Street Address
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.StreetAddress)
+        </dd>
+        <dt class="col-sm-2">
+            Bedrooms
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.NumberOfRooms)
+        </dd>
+        <dt class="col-sm-2">
+            Bathrooms
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.NumberOfBathrooms)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.Size)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Size)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.MiniDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.MiniDescription)
+        </dd>
+        <dt class="col-sm-2">
+            Price Per Year
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Price)
+        </dd>
+        <dt class="col-sm-2">
+            Price Per Month
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.PricePerMonth)
+        </dd>
+        <dt class="col-sm-2">
+            Deposit
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Deposit)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.House.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

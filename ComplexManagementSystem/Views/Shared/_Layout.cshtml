@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>  
+<title>Student Complex Management System</title>
+<meta charset="UTF-8">
+<meta name="description" content="Mosby Portfolio Template">
+<meta name="keywords" content="personal, portfolio">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+ 
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/css/style.css"/>
+
+  	<!--[if lt IE 9]>
+  	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  	<![endif]--> 
+    
+    <!-- FAVICON  -->
+    <link rel="shortcut icon" href="~/img/favico.png">    
+
+	   <!-- Font icons --> 
+    <link rel="stylesheet" href="~/icon-fonts/fontawesome-5.0.6/css/fontawesome-all.min.css"/>
+
+	   <!--Font -->
+     <link rel="stylesheet" href="~/font/stylesheet.css"/>
+     <link rel="stylesheet" type="text/css" href="~/icon-fonts/flaticon/flaticon.css" />
+
+</head> 
+<body class="darkness">
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loading-area">
+            <span>loading...</span>
+        </div>
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+    </div>
+
+    <div class="page-overlay">
+        <div class="page-transition"></div>
+    </div>
+
+    <main>
+
+        <!-- HEADER
+        ================================================== -->
+        <header class="whitev">
+
+            <!-- Menu -->
+            <div class="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- Black Version -->
+        <header class="black">
+
+            <!-- Menu -->
+            <div class="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        <!-- Say Hello -->
+        <div class="say-hello">
+            <a href="~/Home/Contact">Enquire</a>
+        </div>
+        <!-- Social Links -->
+        <div class="social fix">
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i>  </a></li>
+                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i>  </a></li>
+                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i>  </a></li>
+                <li><a href="#"><i class="fab fa-behance" aria-hidden="true"></i>  </a></li>
+                <li><a href="#"><i class="fab fa-dribbble" aria-hidden="true"></i>  </a></li>
+            </ul>
+        </div>
+        <!-- arrow -->
+        <div class="uptotop">
+            <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" width="14.486" height="18.412" viewBox="0 0 14.486 18.412" fill="#000">
+                <path d="M7.073,26.241h0L0,19.172l1.414-1.415,4.829,4.829V8h2V22.586l4.829-4.829,1.415,1.415-7.241,7.24Z" transform="translate(0 -8)" />
+            </svg>
+        </div>
+
+        <!-- Full Menu -->
+        <div class="full-menu">
+            <div class="row">
+                <div class="col-lg-8 left-content">
+                    <div class="outter">
+                        <div class="inner">
+                            <div class="container">
+                                <ul class="site-menu">
+                                    <li><a href="~/" data-type="ajax-load">Home.</a></li>
+                                    <li><a href="~/Home/Properties" data-type="ajax-load">Properties.</a></li>
+                                    <li><a href="~/Home/News" data-type="ajax-load">Our News.</a></li>
+                                    <li><a href="~/Home/Contact" data-type="ajax-load">Contact.</a></li>
+                                    <li><a href="~/Home/About" data-type="ajax-load">About Us.</a></li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <li><a href="~/House/Index" data-type="ajax-load">Administor</a></li>
+                                    }
+                                </ul>
+                            </div> <!-- container end -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 right-content">
+                    <div class="close-icon">
+                        <img src="img/cancel.png">
+                    </div>
+                    <div class="outter">
+                        <div class="inner">
+                            <!--Admin Login-->
+                            <ul>
+                                <li>Login As Admin</li>
+                                <li><partial name="_LoginPartial" /></li>
+                            </ul>
+                            <!-- Brief -->
+                            <ul>
+                                <li>Brief Us</li>
+                                <li>MosakoaTeboho@Gmail.com</li>
+                                <li>Tel. +27 71 234 5678</li>
+                            </ul>
+                            <!-- Follow -->
+                            <ul class="social-links">
+                                <li>Follow Us</li>
+                                <li>Facebook.</li>
+                                <li>Twitter.</li>
+                                <li>Behance.</li>
+                                <li>Dribbble.</li>
+                                <li>Instagram.</li>
+                                <li>Linkedin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row end -->
+        </div>
+        @RenderBody()
+
+        <!-- FOOTER
+        ================================================== -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <img src="img/logo.png" alt=""><br><br>
+                        <p>
+                            © 2020 SCMSystem. All rights reserved.<br>
+                            Made by Teboho Mosakoa.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 footer-info">
+                        <p>
+                            Mosakoateboho@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Javascripts -->
+    <script src="~/js/jquery-2.1.4.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

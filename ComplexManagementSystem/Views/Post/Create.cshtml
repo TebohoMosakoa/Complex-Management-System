@@ -1,0 +1,87 @@
+@model ComplexManagementSystem.ViewModels.PostCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Topic" class="control-label"></label>
+                <input asp-for="Topic" class="form-control" />
+                <span asp-validation-for="Topic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Mini Descriptive paragraph</label>
+                <input asp-for="MiniParagragh" class="form-control" />
+                <span asp-validation-for="MiniParagragh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Blog" class="control-label"></label>
+                <input asp-for="Blog" class="form-control" />
+                <span asp-validation-for="Blog" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo1" class="control-label"></label>
+                <div>
+                    <div class="custom-file">
+                        <input asp-for="Photo1" class="form-control custom-file-input" />
+                        <label class="custom-file-label">1st Photo</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo2" class="control-label"></label>
+                <div>
+                    <div class="custom-file">
+                        <input asp-for="Photo2" class="form-control custom-file-input" />
+                        <label class="custom-file-label">2nd Photo</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo3" class="control-label"></label>
+                <div>
+                    <div class="custom-file">
+                        <input asp-for="Photo3" class="form-control custom-file-input" />
+                        <label class="custom-file-label">3rd Photo</label>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/scripts.js" asp-append-version="true"></script>
+
+
+<script>
+$(document).ready(function () {
+        $('.custom-file-input').on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).next('.custom-file-label').html(fileName);
+        });
+});
+
+</script>

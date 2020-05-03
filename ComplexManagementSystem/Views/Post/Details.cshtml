@@ -1,0 +1,87 @@
+@model ComplexManagementSystem.ViewModels.PostDetailsViewModels
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <br>
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item carousel-multi-item-2" data-ride="carousel">
+
+        <!--Controls-->
+        <div class="controls-top">
+            <a class="black-text" href="#multi-item-example" data-slide="prev"><i class="fas fa-angle-left fa-3x pr-3"></i></a>
+            <a class="black-text" href="#multi-item-example" data-slide="next"><i class="fas fa-angle-right fa-3x pl-3"></i></a>
+        </div>
+        <!--/.Controls-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <img class="img-fluid" src="~/images/@Model.Post.PhotoPath1"
+                             alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+            <!--Second slide-->
+            <div class="carousel-item active">
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <img class="img-fluid" src="~/images/@Model.Post.PhotoPath2"
+                             alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+            <!--/Third slide-->
+            <div class="carousel-item active">
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <img class="img-fluid" src="~/images/@Model.Post.PhotoPath3"
+                             alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--/.Slides-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Post.Topic)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Post.Topic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Post.Blog)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Post.Blog)
+        </dd>
+        <dt class="col-sm-2">
+            Date Created
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Post.DateCreated)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Post.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
